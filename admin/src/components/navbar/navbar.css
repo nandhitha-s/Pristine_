@@ -1,0 +1,19 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 4%;
+    position: sticky; /* Make navbar sticky */
+    top: 0; /* Stick it to the top */
+    background-color: white; /* Ensure it's visible */
+    z-index: 100; /* Keep it above other elements */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+}
+
+.navbar .logo {
+    width: max(10%, 80px);
+}
+
+.navbar .profile {
+    width: 40px;
+}

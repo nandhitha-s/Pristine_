@@ -1,20 +1,30 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import "./Cart.css";
 import { StoreContext } from "../../context/StoreContext";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext"; // Updated to import AuthContext
 
 const Cart = () => {
   const { cartItems, food_list, removeFromCart, getTotalCartAmount, url } = useContext(StoreContext);
-  const { isLoggedIn } = useContext(AuthContext); // Access login state from AuthContext
   const navigate = useNavigate();
 
+  // State to control the visibility of the login popup
+  const [showLoginPopup, setShowLoginPopup] = useState(false);
+
+  // Function to handle checkout
   const handleProceedToCheckout = () => {
-    if (isLoggedIn) {
-      navigate("/order"); // Proceed to checkout if logged in
+    const token = localStorage.getItem("token"); // Check for the presence of a token in localStorage
+
+    if (token) {
+      navigate("/order"); // Proceed to checkout if token exists (user is logged in)
     } else {
-      navigate("/login"); // Redirect to login page if not logged in
+      setShowLoginPopup(true); // Show the login popup if no token found (user is not logged in)
     }
+  };
+
+  // Function to close the popup and navigate back to the home page
+  const handleClosePopup = () => {
+    setShowLoginPopup(false); // Close the login popup
+    navigate("/"); // Redirect to home page
   };
 
   return (
@@ -33,16 +43,14 @@ const Cart = () => {
         {food_list.map((item, index) => {
           if (cartItems[item._id] > 0) {
             return (
-              <div key={index}>
+              <div key={item._id}>
                 <div className="cart-items-title cart-items-item">
-                  <img src={url + "/images/" + item.image} alt="" />
+                  <img src={url + "/images/" + item.image} alt={item.name} />
                   <p>{item.name}</p>
                   <p>${item.price}</p>
                   <p>{cartItems[item._id]}</p>
                   <p>${item.price * cartItems[item._id]}</p>
-                  <p onClick={() => removeFromCart(item._id)} className="cross">
-                    x
-                  </p>
+                  <p onClick={() => removeFromCart(item._id)} className="cross">x</p>
                 </div>
                 <hr />
               </div>
@@ -50,6 +58,7 @@ const Cart = () => {
           }
         })}
       </div>
+
       <div className="cart-bottom">
         <div className="cart-total">
           <h2>Cart Total</h2>
@@ -81,6 +90,17 @@ const Cart = () => {
           </div>
         </div>
       </div>
+
+      {/* Popup Modal */}
+      {showLoginPopup && (
+        <div className="login-popup">
+          <div className="popup-content">
+            <h2>Login Required</h2>
+            <p>You need to be logged in to proceed with the checkout.</p>
+            <button onClick={handleClosePopup}>OK</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

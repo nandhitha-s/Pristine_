@@ -7,6 +7,17 @@
 .navbar .logo{
     width: 150px;
 }
+.navbar-profile img.profile-icon {
+    width: 35px;
+    height: 35px;
+    object-fit: contain; /* Ensures the image scales without distortion */
+  }
+      
+.navbar-search-icon img {
+    width: 35px; /* Adjust the size as needed */
+    height: 35px; /* Adjust the size as needed */
+    object-fit: contain; /* Ensures the image scales correctly without distortion */
+  }
 .navbar-menu{
     display: flex;
     list-style: none;

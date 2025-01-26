@@ -3,6 +3,8 @@ import jwt from 'jsonwebtoken';
 import bcrypt from "bcrypt";
 // import validator from "validator";
 import { validator } from "sequelize/lib/utils/validator-extras";
+import Sequelize from 'sequelize';
+const Sequelize = require('sequelize');
 
 
 

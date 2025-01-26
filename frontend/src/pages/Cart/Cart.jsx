@@ -2,11 +2,11 @@ import React, { useContext } from "react";
 import "./Cart.css";
 import { StoreContext } from "../../context/StoreContext";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext"; // assuming you have an AuthContext to manage user state
+import { AuthContext } from "../../context/AuthContext"; // Updated to import AuthContext
 
 const Cart = () => {
   const { cartItems, food_list, removeFromCart, getTotalCartAmount, url } = useContext(StoreContext);
-  const { isLoggedIn } = useContext(AuthContext); // Check if user is logged in from AuthContext
+  const { isLoggedIn } = useContext(AuthContext); // Access login state from AuthContext
   const navigate = useNavigate();
 
   const handleProceedToCheckout = () => {

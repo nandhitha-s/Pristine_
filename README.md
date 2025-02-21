@@ -17,9 +17,8 @@ The API is accessible at [https://pristine-api.onrender.com](https://pristine-ap
 The project is organized as follows:
 
 - **Backend**: Contains the core API implementation, including route handlers, controllers, and models.
-- **Frontend**: (If applicable) Contains the client-side application that interacts with the API.
-- **Client**: (If applicable) Contains any client-specific code or applications.
-- **Server**: (If applicable) Contains server-specific configurations or code.
+- **Frontend**: Contains the client-side application that interacts with the API.
+
 
 ## Getting Started
 

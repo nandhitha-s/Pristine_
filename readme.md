@@ -1,27 +1,25 @@
-# Collab
+# Pristine
 
-Collab is a collaborative code editor designed to provide developers with a seamless coding experience. It includes features such as real-time collaboration, AI-powered code assistance, file management, and code execution.
+Pristine is a project aimed at providing a robust API for various applications. The API is designed to be scalable, efficient, and easy to integrate.
 
 ## Features
 
-- **Real-Time Collaboration**: Work simultaneously with others on the same codebase.
-- **AI-Powered Code Assistance**: Receive intelligent code suggestions to enhance productivity.
-- **File Management**: Easily manage your project files within the editor.
-- **Code Execution**: Run your code directly from the editor and view outputs in real-time.
+- **RESTful API**: Follows REST principles, ensuring predictable and resource-oriented endpoints.
+- **Scalability**: Built to handle a large number of requests efficiently.
+- **Ease of Integration**: Simple and consistent interface for seamless integration with various clients.
+
+## API Documentation
+
+The API is accessible at [https://pristine-api.onrender.com](https://pristine-api.onrender.com). For detailed documentation on available endpoints, request/response structures, and usage examples, please refer to the API documentation provided at the base URL.
 
 ## Project Structure
 
-The project follows a standard full-stack architecture:
+The project is organized as follows:
 
-- **Frontend**: Built with modern web technologies to provide an intuitive user interface.
-- **Backend**: Handles authentication, real-time collaboration, and integrates AI services.
-
-## Deployment
-
-The application is deployed using [Render](https://render.com/), a cloud platform for hosting web applications.
-
-- **Frontend**: Accessible at [https://collab-frontend-putq.onrender.com](https://collab-frontend-putq.onrender.com).
-- **Backend**: Hosted at [https://pristine-api.onrender.com](https://pristine-api.onrender.com).
+- **Backend**: Contains the core API implementation, including route handlers, controllers, and models.
+- **Frontend**: (If applicable) Contains the client-side application that interacts with the API.
+- **Client**: (If applicable) Contains any client-specific code or applications.
+- **Server**: (If applicable) Contains server-specific configurations or code.
 
 ## Getting Started
 
@@ -35,32 +33,28 @@ To set up the project locally:
    ```bash
    cd Pristine_
    ```
-3. **Install dependencies** for both frontend and backend:
+3. **Install dependencies**:
    ```bash
-   # For frontend
-   cd frontend
+   # Using npm
    npm install
 
-   # For backend
-   cd ../backend
-   npm install
+   # Or using yarn
+   yarn install
    ```
-4. **Start the development servers**:
+4. **Start the development server**:
    ```bash
-   # For frontend
-   cd frontend
+   # Using npm
    npm start
 
-   # For backend
-   cd ../backend
-   npm start
+   # Or using yarn
+   yarn start
    ```
 
-## Contributing
+## Deployment
 
-Contributions are welcome! Please fork the repository and create a pull request with your changes.
+The API is currently deployed and accessible at [https://pristine-api.onrender.com](https://pristine-api.onrender.com). For deployment details and configurations, please refer to the deployment documentation or scripts provided in the repository.
 
 ---
 
-For a live demo, visit [https://collab-frontend-putq.onrender.com](https://collab-frontend-putq.onrender.com).
+For more information or to access the API, visit [https://pristine-api.onrender.com](https://pristine-api.onrender.com).
 

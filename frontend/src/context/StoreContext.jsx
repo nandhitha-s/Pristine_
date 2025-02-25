@@ -7,7 +7,7 @@ const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
   const [token, setToken] = useState("");
   const [food_list, setFoodList] = useState([]);
-  const url = "https://pristine-frontend.onrender.com";
+  const url = "https://pristine-o4ag.onrender.com";
 
   const addToCart = async (itemId) => {
     setCartItems((prev) => ({
